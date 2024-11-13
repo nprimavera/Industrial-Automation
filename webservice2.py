@@ -1,4 +1,11 @@
-#!/usr/bin/env python3
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
 # NOTE: replace above line with your envrionment's python's path
 # import the required library to execute external commands
 

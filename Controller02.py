@@ -1,9 +1,17 @@
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
 """
 This script makes crickit's LED blinking for 20 times and then stops.
 Notice how this script is different from the first script.
 Standard python scripts should be:
-1. Robust and coherent,
-2. Object Oriented
+    1. Robust and coherent,
+    2. Object Oriented
 We made this script more coherent and easier to read.
 But still, this is not object oriented!
 """
@@ -30,6 +38,7 @@ def main(count, pause):
             crickit.onboard_pixel.fill(RGB[color])
             time.sleep(pause)
             i += 1
-        return
-    if __name__ == "__main__":
-        main(20, 0.1)
+    return
+    
+if __name__ == "__main__":
+    main(20, 0.1)

@@ -1,6 +1,13 @@
+#!/Users/nicolinoprimavera/anaconda3/bin/python
 """
-The first script to check overall connections and software installation of your
-robot.
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
+"""
+The first script to check overall connections and software installation of your robot.
 We simply change Crickit's LED's color.
 Make sure this works on your robot.
 You may change the color manually, save and re-run to see other colors.

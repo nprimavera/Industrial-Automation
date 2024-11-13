@@ -1,7 +1,14 @@
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
 """
 A class that implements all robot movement matters.
-Write this script in a way that receives left and right motor values,
-with the duration it has to travel.
+Write this script in a way that receives left and right motor values, with the duration it has to travel.
 """
 
 from adafruit_crickit import crickit as ck
@@ -11,21 +18,23 @@ import argparse
 # Define a class to handle all robot matters
 class Robot:
     def __init__(self):
-    # define LED variables
+        # define LED variables
         self.RGB = dict(red=0xFF0000, green=0x00FF00, blue=0x0000FF)
         self.LEDBrightness = ck.onboard_pixel.brightness
         self.LEDBrightness = 0.01
+        
         # define motors
         self.MotorL = ck.dc_motor_1
         self.MotorR = ck.dc_motor_2
 
-def _set_throttle(self, motor, value):
-    """
-    Args:
-    - motor: Cricket's motor object
-    - value: the throttle value - motor's input signal intensity 0 to 1
-    """
-    motor.throttle = value
+    def _set_throttle(self, motor, value):
+        """
+        Args:
+        - motor: Cricket's motor object
+        - value: the throttle value - motor's input signal intensity 0 to 1
+        """
+        motor.throttle = value
+
     def move(self, valueR, valueL, Duration):
         """
         Args:
@@ -41,12 +50,13 @@ def _set_throttle(self, motor, value):
 
 def main(args):
     # check the validity of args
-    if not (-0.9 <= args.left <= 0.9 and -0.9 <= args.right <= 0.9 and 0 <=
-        args.duration <= 30):
+    if not (-0.9 <= args.left <= 0.9 and -0.9 <= args.right <= 0.9 and 0 <= args.duration <= 30):
         print("Not valid input parameters.")
     exit(1)
-# define a robot instance
-robot = Robot()
+
+    # define a robot instance
+    robot = Robot()
+
 # move the instance
 robot.move(args.left, args.right, args.duration)
 if __name__ == "__main__":
@@ -55,4 +65,5 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--right", type=float, help="The right motor's signal value.")
     parser.add_argument("-d", "--duration", type=float, help="The time lapse that the robot should move.")
     args = parser.parse_args()
+
     main(args)

@@ -1,4 +1,11 @@
-#!/home/ali/pyenv/bin/python
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
 # NOTE: notice how we tell the script which python it should use to execte.
 # import required libraries
 

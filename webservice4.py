@@ -1,7 +1,12 @@
-#!/home/ali/pyenv/bin/python
-# NOTE: replace above line with your envrionment's python's path
-# import the required library to execute external commands
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
 
+# import the required library to execute external commands
 from datetime import datetime # we'd record date and time when there is a http request
 from tornado.web import RequestHandler, Application # fine tune our web application
 from tornado.ioloop import IOLoop # the main object that runs the robot server

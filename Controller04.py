@@ -1,3 +1,11 @@
+#!/Users/nicolinoprimavera/anaconda3/bin/python
+"""
+Nicolino Primavera 
+Industrial Automation
+Assignment 2
+10/24/24 
+"""
+
 """
 This script investigates the status of touch sensors.
 """
@@ -15,5 +23,6 @@ print('touch the sensor number 1 exit the program ...')
 while not touch1_status:
     touch1_status = crickit.touch_1.value
     pass
+
 # end of program - inform the user that the sensor is touchedm before exiting the program.
 print('sensor 1 is touched.')
