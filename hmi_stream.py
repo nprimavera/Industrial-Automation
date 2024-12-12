@@ -1,19 +1,20 @@
+
 import os
 import asyncio
 import tornado.web
 from file_watcher import FileWatcher
+ 
 
 # Hyper params
 # Location of atomically created stream file:
 IMG_PATH = os.environ['XDG_RUNTIME_DIR'] + '/robot_stream.jpg'
-
 # Interval between frames to be streamed remotely:
 POLL_DELAY = 0.01
-
 # These are the hyper params that tornado needs to handle events:
 CONTENT_TYPE = 'multipart/x-mixed-replace;boundary=image-boundary'
 BOUNDARY = b'--image-boundary\r\n'
 JPEG_HEADER = b'Content-Type: image/jpeg\r\n\r\n'
+
 
 """
 NOTE:
@@ -35,10 +36,12 @@ class EventHandler(tornado.web.RequestHandler):
                 self.flush()
             await asyncio.sleep(POLL_DELAY)
 
+
 async def main():
     app = tornado.web.Application([('/', EventHandler)])
     app.listen(9000)
     shutdown_event = asyncio.Event()
     await shutdown_event.wait()
+
 
 asyncio.run(main())
